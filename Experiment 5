@@ -1,0 +1,23 @@
+def reverse_kth_rows(matrix, k):
+    for i in range(0, len(matrix), k):
+        matrix[i:i+k] = matrix[i:i+k][::-1]
+
+def print_matrix(matrix):
+    for row in matrix:
+        print(' '.join(map(str, row)))
+
+if __name__ == '__main__':
+    # Example matrix
+    matrix = [
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9],
+        [10, 11, 12]
+    ]
+
+    k = 2  # Specify the value of k
+
+    reverse_kth_rows(matrix, k)
+
+    print("Matrix after reversing every", k, "row:")
+    print_matrix(matrix)
